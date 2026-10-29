@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zulqarnain Library Center - Knowledge & Study Hub</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-indigo-950 text-white text-xs sm:text-sm py-2 px-4 border-b border-indigo-900">
+        <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-1">
+            <div class="flex items-center space-x-4">
+                <span><i class="fa-solid fa-phone text-amber-400 mr-1.5"></i> 03167102689</span>
+                <span><i class="fa-solid fa-envelope text-amber-400 mr-1.5"></i> zulqarnainkhichi33106@gmail.com</span>
+            </div>
+            <div class="flex items-center space-x-3">
+                <span class="bg-indigo-900 px-3 py-0.5 rounded-full text-indigo-200"><i class="fa-solid fa-clock text-amber-400 mr-1"></i> Open Today: 8:00 AM - 10:00 PM</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Navigation Bar -->
+    <nav class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3.5 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-11 h-11 bg-gradient-to-tr from-indigo-900 to-indigo-700 text-white rounded-xl flex items-center justify-center font-extrabold text-2xl shadow-md border border-indigo-500">
+                    Z
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-lg sm:text-xl font-extrabold text-indigo-950 tracking-wide leading-tight">Zulqarnain Library</span>
+                    <span class="text-[10px] sm:text-xs text-indigo-600 font-bold tracking-widest uppercase">Center & Study Hub</span>
+                </div>
+            </div>
+            <div class="hidden md:flex space-x-6 font-semibold text-sm text-gray-600 items-center">
+                <a href="#home" class="text-indigo-600 hover:text-indigo-800 transition">Home</a>
+                <a href="#catalog" class="hover:text-indigo-600 transition">Book Catalog</a>
+                <a href="#about" class="hover:text-indigo-600 transition">About Us</a>
+                <a href="#services" class="hover:text-indigo-600 transition">Facilities</a>
+                <button onclick="openNewUsersModal()" class="bg-amber-500 hover:bg-amber-400 text-gray-950 font-extrabold text-xs px-3.5 py-2 rounded-xl shadow transition flex items-center gap-1.5 cursor-pointer">
+                    <i class="fa-solid fa-user-plus"></i> New Users
+                </button>
+                <a href="#contact" class="hover:text-indigo-600 transition">Contact</a>
+            </div>
+            <div class="flex items-center gap-2 md:hidden">
+                <a href="#catalog" class="bg-indigo-600 text-white font-bold text-xs px-2.5 py-2 rounded-lg">Catalog</a>
+                <button onclick="openNewUsersModal()" class="bg-amber-500 text-gray-950 font-bold text-xs px-2.5 py-2 rounded-lg cursor-pointer">New Users</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Home) -->
+    <header id="home" class="relative bg-gradient-to-br from-indigo-950 via-indigo-900 to-blue-950 text-white py-24 px-4 overflow-hidden">
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="container mx-auto text-center max-w-4xl flex flex-col items-center relative z-10">
+            <div class="w-28 h-28 bg-gradient-to-tr from-amber-400 via-amber-300 to-amber-100 text-indigo-950 rounded-3xl flex items-center justify-center font-black text-6xl shadow-2xl mb-8 border-4 border-amber-300/40 transform hover:scale-105 transition duration-300">
+                Z
+            </div>
+            
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 leading-tight tracking-tight">
+                Welcome to <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-500">Zulqarnain Library</span> Center
+            </h1>
+            <p class="text-lg sm:text-xl text-indigo-200 mb-10 max-w-2xl leading-relaxed">
+                Your premier academic destination offering quiet study environments, extensive literature archives, competitive exam preparation guides, and digital research portals.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 w-full sm:w-auto">
+                <button onclick="toggleAllHiddenBooks()" id="heroViewAllBtn" class="bg-amber-500 hover:bg-amber-400 text-gray-950 font-extrabold px-8 py-3.5 rounded-xl shadow-lg transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2 cursor-pointer">
+                    <i class="fa-solid fa-book"></i> View All 100+ Books Archive
+                </button>
+                <a href="#about" class="border-2 border-indigo-400/50 hover:bg-white/10 text-white font-bold px-8 py-3.5 rounded-xl transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-circle-info"></i> Learn About Us
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Expanded Book Catalog & Categories Section -->
+    <section id="catalog" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-xl mx-auto mb-12">
+                <span class="text-indigo-600 font-extrabold text-xs tracking-widest uppercase bg-indigo-100 px-3 py-1 rounded-full">Library Inventory</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-indigo-950 mt-3 mb-3">Book Catalog & Collection</h2>
+                <p class="text-gray-600 text-sm">Explore our vast shelves across diverse academic and literary genres. Click any book to open its complete chapters, subheadings, and textbook contents online.</p>
+            </div>
+
+            <!-- Button to reveal 100+ hidden books -->
+            <div class="flex justify-center mb-12">
+                <button onclick="toggleAllHiddenBooks()" id="catalogToggleBtn" class="bg-indigo-950 hover:bg-indigo-900 text-amber-400 font-extrabold px-6 py-3 rounded-2xl shadow-md transition flex items-center gap-2 text-sm cursor-pointer">
+                    <i class="fa-solid fa-eye" id="toggleIcon"></i> <span id="toggleBtnText">Show All 100+ Books Not Visible on Home Page</span>
+                </button>
+            </div>
+
+            <!-- Books Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                
+                <!-- Book 1: Class 9 Computer Science -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-xl transition flex flex-col justify-between group">
+                    <div>
+                        <div class="h-64 bg-indigo-100 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=500&q=80" alt="Book Cover" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 right-3 bg-amber-500 text-gray-950 text-xs px-2.5 py-1 rounded-lg font-extrabold shadow">Class 9 Computer</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-lg text-indigo-950 mb-1 leading-snug">Computer Science Textbook (Class 9)</h3>
+                            <p class="text-xs text-indigo-600 font-semibold mb-2.5">By PCTB Curriculum Board</p>
+                            <p class="text-xs text-gray-500 line-clamp-2 leading-relaxed">Official secondary school textbook covering fundamentals of computers and programming logic.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0 flex flex-col gap-2">
+                        <button onclick="openBookModal(1)" class="w-full bg-indigo-600 text-white hover:bg-indigo-700 font-bold py-2.5 rounded-xl text-xs transition shadow-sm flex items-center justify-center gap-1.5 cursor-pointer">
+                            <i class="fa-solid fa-book-open"></i> Open Book & Details
+                        </button>
+                        <button onclick="alert('Book successfully reserved at Zulqarnain Library Center!')" class="w-full bg-indigo-50 text-indigo-700 hover:bg-indigo-100 font-bold py-2 rounded-xl text-xs transition border border-indigo-200 cursor-pointer">
+                            Reserve Book
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Book 2: Quantum Physics -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-xl transition flex flex-col justify-between group">
+                    <div>
+                        <div class="h-64 bg-indigo-100 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=500&q=80" alt="Book Cover" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 right-3 bg-indigo-950 text-white text-xs px-2.5 py-1 rounded-lg font-bold shadow">Science & Tech</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-lg text-indigo-950 mb-1 leading-snug">Quantum Physics for Beginners</h3>
+                            <p class="text-xs text-indigo-600 font-semibold mb-2.5">By Dr. Carl Alistair</p>
+                            <p class="text-xs text-gray-500 line-clamp-2 leading-relaxed">An approachable introduction to the fundamental concepts of quantum mechanics and modern physics.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0 flex flex-col gap-2">
+                        <button onclick="openBookModal(2)" class="w-full bg-indigo-600 text-white hover:bg-indigo-700 font-bold py-2.5 rounded-xl text-xs transition shadow-sm flex items-center justify-center gap-1.5 cursor-pointer">
+                            <i class="fa-solid fa-book-open"></i> Open Book & Details
+                        </button>
+                        <button onclick="alert('Book successfully reserved at Zulqarnain Library Center!')" class="w-full bg-indigo-50 text-indigo-700 hover:bg-indigo-100 font-bold py-2 rounded-xl text-xs transition border border-indigo-200 cursor-pointer">
+                            Reserve Book
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 100+ Hidden Books (Dynamically Injected via JavaScript Grid) -->
+                <div id="hiddenBooksContainer" class="col-span-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 hidden">
+                    <!-- JavaScript will generate 100+ unique books here -->
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section & Timings -->
+    <section id="about" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-indigo-600 font-extrabold text-xs tracking-widest uppercase bg-indigo-100 px-3 py-1 rounded-full">About Our Mission</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-indigo-950 mt-3 mb-6">Empowering Scholars & Lifelong Learners</h2>
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    Founded with a vision to provide a world-class educational sanctuary, <strong>Zulqarnain Library Center</strong> caters to university students, researchers, competitive examination aspirants (CSS/PMS), and passionate readers.
+                </p>
+                <p class="text-gray-600 mb-8 leading-relaxed">
+                    We maintain an atmosphere of absolute focus, discipline, and intellectual growth, ensuring every member gets optimal resources to succeed in their academic and career pursuits.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="flex items-center space-x-3 bg-white p-3.5 rounded-xl shadow-sm">
+                        <i class="fa-solid fa-circle-check text-indigo-600 text-lg"></i>
+                        <span class="font-bold text-sm text-gray-700">Central AC & Heating</span>
+                    </div>
+                    <div class="flex items-center space-x-3 bg-white p-3.5 rounded-xl shadow-sm">
+                        <i class="fa-solid fa-circle-check text-indigo-600 text-lg"></i>
+                        <span class="font-bold text-sm text-gray-700">Locker Facilities</span>
+                    </div>
+                    <div class="flex items-center space-x-3 bg-white p-3.5 rounded-xl shadow-sm">
+                        <i class="fa-solid fa-circle-check text-indigo-600 text-lg"></i>
+                        <span class="font-bold text-sm text-gray-700">Discussion Rooms</span>
+                    </div>
+                    <div class="flex items-center space-x-3 bg-white p-3.5 rounded-xl shadow-sm">
+                        <i class="fa-solid fa-circle-check text-indigo-600 text-lg"></i>
+                        <span class="font-bold text-sm text-gray-700">Cafeteria Lounge</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Schedule Card -->
+            <div class="bg-indigo-950 text-white p-8 sm:p-10 rounded-3xl shadow-2xl relative overflow-hidden border border-indigo-900">
+                <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-indigo-600/20 rounded-full blur-2xl"></div>
+                <h3 class="text-2xl font-extrabold mb-6 flex items-center">
+                    <i class="fa-solid fa-calendar-days text-amber-400 mr-3"></i> Library Schedule
+                </h3>
+                <ul class="space-y-4 border-b border-indigo-900 pb-6 mb-6 text-sm">
+                    <li class="flex justify-between items-center">
+                        <span class="text-gray-300">Monday - Thursday:</span> 
+                        <span class="font-bold bg-indigo-900 px-3 py-1 rounded-lg">8:00 AM - 10:00 PM</span>
+                    </li>
+                    <li class="flex justify-between items-center">
+                        <span class="text-gray-300">Friday Hours:</span> 
+                        <span class="font-bold bg-indigo-900 px-3 py-1 rounded-lg">8:00 AM - 11:30 PM</span>
+                    </li>
+                    <li class="flex justify-between items-center">
+                        <span class="text-gray-300">Saturday & Sunday:</span> 
+                        <span class="font-bold bg-indigo-900 px-3 py-1 rounded-lg">9:00 AM - 9:00 PM</span>
+                    </li>
+                </ul>
+                <div class="bg-amber-400/10 border border-amber-400/30 p-4 rounded-xl text-center">
+                    <span class="text-amber-300 font-bold text-sm flex items-center justify-center">
+                        <i class="fa-solid fa-bell mr-2 animate-bounce"></i> 24-Hour reading hall access active during exam weeks!
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities / Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-xl mx-auto mb-16">
+                <span class="text-indigo-600 font-extrabold text-xs tracking-widest uppercase bg-indigo-100 px-3 py-1 rounded-full">Library Management & Facilities</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-indigo-950 mt-3 mb-3">Advanced Library Facilities</h2>
+                <p class="text-gray-600 text-sm">Explore our high-tech library management systems and study facilities designed to streamline your research and learning experience.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-8 bg-gray-50 border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-indigo-600 text-white rounded-2xl flex items-center justify-center text-2xl mb-5 shadow"><i class="fa-solid fa-barcode"></i></div>
+                    <h4 class="font-bold text-lg text-indigo-950 mb-2">Automated Cataloging (OPAC)</h4>
+                    <p class="text-xs text-gray-600 leading-relaxed">Search through our 15,000+ books instantly via computerized classification codes, author indexes, and subject filters.</p>
+                </div>
+                <div class="p-8 bg-gray-50 border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-indigo-600 text-white rounded-2xl flex items-center justify-center text-2xl mb-5 shadow"><i class="fa-solid fa-right-left"></i></div>
+                    <h4 class="font-bold text-lg text-indigo-950 mb-2">Circulation & Loan Tracking</h4>
+                    <p class="text-xs text-gray-600 leading-relaxed">Seamlessly issue, return, or renew books with automated due-date notifications and digital borrowing histories.</p>
+                </div>
+                <div class="p-8 bg-gray-50 border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-indigo-600 text-white rounded-2xl flex items-center justify-center text-2xl mb-5 shadow"><i class="fa-solid fa-id-card"></i></div>
+                    <h4 class="font-bold text-lg text-indigo-950 mb-2">RFID Self-Service Kiosks</h4>
+                    <p class="text-xs text-gray-600 leading-relaxed">Independent check-in and check-out counters equipped with RFID smart-card scanners for rapid book processing.</p>
+                </div>
+                <div class="p-8 bg-gray-50 border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-indigo-600 text-white rounded-2xl flex items-center justify-center text-2xl mb-5 shadow"><i class="fa-solid fa-volume-xmark"></i></div>
+                    <h4 class="font-bold text-lg text-indigo-950 mb-2">Soundproof Silent Zones</h4>
+                    <p class="text-xs text-gray-600 leading-relaxed">Strictly monitored quiet reading halls configured for deep concentration, memorization, and focused study.</p>
+                </div>
+                <div class="p-8 bg-gray-50 border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-indigo-600 text-white rounded-2xl flex items-center justify-center text-2xl mb-5 shadow"><i class="fa-solid fa-laptop-code"></i></div>
+                    <h4 class="font-bold text-lg text-indigo-950 mb-2">Digital Research Lab</h4>
+                    <p class="text-xs text-gray-600 leading-relaxed">High-speed computer systems with dedicated subscriptions to global e-journals, research databases, and e-books.</p>
+                </div>
+                <div class="p-8 bg-gray-50 border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-indigo-600 text-white rounded-2xl flex items-center justify-center text-2xl mb-5 shadow"><i class="fa-solid fa-lock"></i></div>
+                    <h4 class="font-bold text-lg text-indigo-950 mb-2">Secure Member Lockers</h4>
+                    <p class="text-xs text-gray-600 leading-relaxed">Assigned digital lockers for members to store personal notes, laptops, and reference textbooks securely.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Detail & Reading Modal Window -->
+    <div id="bookModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-gray-100 transform transition-all">
+            <div class="bg-indigo-950 text-white p-6 sm:p-8 flex justify-between items-start sticky top-0 z-10 border-b border-indigo-900">
+                <div>
+                    <span id="modalCategory" class="bg-amber-400 text-gray-950 text-xs px-3 py-1 rounded-lg font-extrabold uppercase tracking-wider"></span>
+                    <h2 id="modalTitle" class="text-2xl sm:text-3xl font-extrabold mt-2 leading-snug"></h2>
+                    <p id="modalAuthor" class="text-indigo-300 text-sm mt-1 font-medium"></p>
+                </div>
+                <button onclick="closeBookModal()" class="w-10 h-10 bg-indigo-900 hover:bg-indigo-800 text-white rounded-xl flex items-center justify-center text-lg transition shadow cursor-pointer">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-6 sm:p-8 space-y-6">
+                <div>
+                    <h4 class="text-xs font-bold uppercase text-indigo-600 tracking-wider mb-2">Book Overview & Summary</h4>
+                    <p id="modalDescription" class="text-gray-600 text-sm leading-relaxed"></p>
+                </div>
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <h4 class="text-xs font-bold uppercase text-indigo-600 tracking-wider">Table of Contents & Chapters</h4>
+                        <span class="text-xs text-gray-500 font-medium">Click "Open Chapter" to read full details</span>
+                    </div>
+                    <div id="modalChapters" class="space-y-4">
+                        <!-- Chapters Injected Dynamically -->
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-50 px-6 sm:px-8 py-4 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center gap-3">
+                <span class="text-xs text-gray-500"><i class="fa-solid fa-circle-check text-green-600 mr-1"></i> Full text available online & at Zulqarnain Library Main Shelf</span>
+                <button onclick="alert('Book successfully reserved!'); closeBookModal();" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-400 text-gray-950 font-extrabold px-6 py-2.5 rounded-xl text-sm transition shadow cursor-pointer">
+                    Reserve This Book Now
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Users Registration Modal Form -->
+    <div id="newUsersModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-gray-100 p-6 sm:p-8">
+            <div class="flex justify-between items-center pb-4 border-b border-gray-100 mb-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-amber-400 text-gray-950 rounded-xl flex items-center justify-center font-black text-lg">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-extrabold text-indigo-950">New User Registration</h3>
+                        <p class="text-xs text-gray-500">Join the Zulqarnain Library community</p>
+                    </div>
+                </div>
+                <button onclick="closeNewUsersModal()" class="w-9 h-9 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl flex items-center justify-center transition cursor-pointer">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <form id="registrationForm" onsubmit="handleUserRegistration(event)" class="space-y-4">
+                <div>
+                    <label class="block text-gray-700 text-xs font-bold uppercase mb-1.5">Full Name</label>
+                    <input type="text" id="regFullName" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-indigo-600 font-medium" placeholder="Zulqarnain Haider">
+                </div>
+                <div>
+                    <label class="block text-gray-700 text-xs font-bold uppercase mb-1.5">Email Address</label>
+                    <input type="email" id="regEmail" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-indigo-600 font-medium" placeholder="user@example.com">
+                </div>
+                <div>
+                    <label class="block text-gray-700 text-xs font-bold uppercase mb-1.5">Password</label>
+                    <input type="password" id="regPassword" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-indigo-600 font-medium" placeholder="••••••••">
+                </div>
+                <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3.5 px-4 rounded-xl shadow-md transition text-sm flex items-center justify-center gap-2 cursor-pointer">
+                    <i class="fa-solid fa-user-check"></i> Complete Registration
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white border-t border-gray-200">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="bg-indigo-950 rounded-3xl shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 text-white">
+                <div class="p-10 lg:p-12 flex flex-col justify-between bg-gradient-to-br from-indigo-950 to-indigo-900">
+                    <div>
+                        <span class="text-amber-400 font-extrabold text-xs tracking-widest uppercase bg-amber-400/10 px-3 py-1 rounded-full">Get In Touch</span>
+                        <h3 class="text-3xl font-extrabold mt-3 mb-4">Membership & Seat Inquiries</h3>
+                        <p class="text-indigo-200 text-sm mb-8 leading-relaxed">Have questions regarding monthly membership fees, study desk reservations, or book availability? Send us a message directly.</p>
+                        <div class="space-y-4 text-sm text-indigo-100">
+                            <p class="flex items-center"><i class="fa-solid fa-location-dot text-amber-400 w-6"></i> Main Library Avenue, City Center</p>
+                            <p class="flex items-center"><i class="fa-solid fa-phone text-amber-400 w-6"></i> 03167102689</p>
+                            <p class="flex items-center"><i class="fa-solid fa-envelope text-amber-400 w-6"></i> zulqarnainkhichi33106@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-10 lg:p-12 bg-white text-gray-800">
+                    <h3 class="text-2xl font-extrabold text-indigo-950 mb-6">Send Us a Message</h3>
+                    <form onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent.');" class="space-y-4">
+                        <div>
+                            <label class="block text-gray-700 text-xs font-bold uppercase mb-1.5">Your Full Name</label>
+                            <input type="text" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-indigo-600 font-medium" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-xs font-bold uppercase mb-1.5">Email Address</label>
+                            <input type="email" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-indigo-600 font-medium" placeholder="john@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-xs font-bold uppercase mb-1.5">Your Message</label>
+                            <textarea rows="4" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-indigo-600 font-medium" placeholder="How can we assist your studies?"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3.5 px-4 rounded-xl shadow-md transition text-sm cursor-pointer">Submit Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-b from-gray-950 via-gray-900 to-black text-gray-300 pt-20 pb-10 border-t-4 border-amber-400">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 bg-gray-900/60 border border-gray-800 rounded-2xl p-6 mb-16 text-center backdrop-blur-sm shadow-xl">
+                <div>
+                    <h3 class="text-3xl font-extrabold text-amber-400 mb-1">15,000+</h3>
+                    <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Books & Journals</p>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-extrabold text-amber-400 mb-1">500+</h3>
+                    <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Study Desks</p>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-extrabold text-amber-400 mb-1">1,200+</h3>
+                    <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Active Members</p>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-extrabold text-amber-400 mb-1">24/7</h3>
+                    <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Online Portal Access</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div>
+                    <div class="flex items-center space-x-3 mb-5">
+                        <div class="w-10 h-10 bg-gradient-to-tr from-amber-400 to-amber-200 text-indigo-950 rounded-xl flex items-center justify-center font-black text-xl shadow-lg border border-amber-300">
+                            Z
+                        </div>
+                        <span class="text-xl font-extrabold text-white tracking-wide">Zulqarnain Library</span>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-6 leading-relaxed">
+                        An elite destination for students, scholars, and avid readers. Designed for uninterrupted deep study, research, and quiet contemplation.
+                    </p>
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-10 h-10 bg-gray-900 border border-gray-800 rounded-xl flex items-center justify-center text-gray-300 hover:bg-amber-400 hover:text-gray-950 transition shadow"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 bg-gray-900 border border-gray-800 rounded-xl flex items-center justify-center text-gray-300 hover:bg-amber-400 hover:text-gray-950 transition shadow"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 bg-gray-900 border border-gray-800 rounded-xl flex items-center justify-center text-gray-300 hover:bg-amber-400 hover:text-gray-950 transition shadow"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-gray-900 border border-gray-800 rounded-xl flex items-center justify-center text-gray-300 hover:bg-amber-400 hover:text-gray-950 transition shadow"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-5 border-b border-gray-800 pb-3 flex items-center">
+                        <i class="fa-solid fa-compass text-amber-400 mr-2"></i> Navigation
+                    </h4>
+                    <ul class="space-y-3 text-sm font-medium">
+                        <li><a href="#home" class="hover:text-amber-400 transition flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-amber-400"></i> Home Portal</a></li>
+                        <li><a href="#catalog" class="hover:text-amber-400 transition flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-amber-400"></i> Book Catalog</a></li>
+                        <li><a href="#about" class="hover:text-amber-400 transition flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-amber-400"></i> About Us</a></li>
+                        <li><a href="#services" class="hover:text-amber-400 transition flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-amber-400"></i> Facilities</a></li>
+                        <li><button onclick="openNewUsersModal()" class="hover:text-amber-400 transition flex items-center text-left cursor-pointer"><i class="fa-solid fa-chevron-right text-xs mr-2 text-amber-400"></i> New User Registration</button></li>
+                        <li><a href="#contact" class="hover:text-amber-400 transition flex items-center"><i class="fa-solid fa-chevron-right text-xs mr-2 text-amber-400"></i> Membership Inquiry</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-5 border-b border-gray-800 pb-3 flex items-center">
+                        <i class="fa-solid fa-clock text-amber-400 mr-2"></i> Operating Hours
+                    </h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex justify-between border-b border-gray-900 pb-2">
+                            <span class="text-gray-400">Monday - Thursday:</span>
+                            <span class="text-white font-semibold">8:00 AM - 10:00 PM</span>
+                        </li>
+                        <li class="flex justify-between border-b border-gray-900 pb-2">
+                            <span class="text-gray-400">Friday Schedule:</span>
+                            <span class="text-white font-semibold">8:00 AM - 11:30 PM</span>
+                        </li>
+                        <li class="flex justify-between border-b border-gray-900 pb-2">
+                            <span class="text-gray-400">Weekend Hours:</span>
+                            <span class="text-white font-semibold">9:00 AM - 9:00 PM</span>
+                        </li>
+                        <li class="text-xs text-amber-400/90 italic pt-1"><i class="fa-solid fa-circle-info mr-1"></i> Extended hours during midterms & finals.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-5 border-b border-gray-800 pb-3 flex items-center">
+                        <i class="fa-solid fa-envelope-open-text text-amber-400 mr-2"></i> Stay Updated
+                    </h4>
+                    <p class="text-sm text-gray-400 mb-4">Subscribe for direct notifications regarding newly released volumes and seat slot updates.</p>
+                    <form onsubmit="event.preventDefault(); alert('Successfully subscribed to Zulqarnain Library newsletter!');" class="space-y-3">
+                        <input type="email" required placeholder="Enter your email address" class="w-full px-4 py-2.5 bg-gray-900 border border-gray-800 rounded-xl text-sm text-white focus:outline-none focus:border-amber-400">
+                        <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-gray-950 font-bold py-2.5 rounded-xl text-sm transition shadow-lg cursor-pointer">Join Newsletter</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-gray-900 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 space-y-4 md:space-y-0">
+                <p>&copy; 2026 Zulqarnain Library Center. All Rights Reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-amber-400 transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-amber-400 transition">Terms of Service</a>
+                    <a href="#" class="hover:text-amber-400 transition">Member Guidelines</a>
+                    <a href="#" class="hover:text-amber-400 transition">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Engine -->
+    <script>
+        const bookDatabase = {
+            1: {
+                title: "Computer Science Textbook (Class 9)",
+                author: "PCTB Curriculum Board",
+                category: "Class 9 Computer",
+                description: "Official Punjab Curriculum and Textbook Board secondary school textbook covering fundamentals of computers and programming logic.",
+                chapters: [{ chapterTitle: "Chapter 1: Introduction to Computer Systems", pageRange: "Pages 1 - 24", subheadings: [{ subTitle: "1.1 Hardware vs Software", details: "Detailed explanation of computer components." }] }]
+            },
+            2: {
+                title: "Quantum Physics for Beginners",
+                author: "Dr. Carl Alistair",
+                category: "Science & Tech",
+                description: "An approachable introduction to the fundamental concepts of quantum mechanics and modern physics.",
+                chapters: [{ chapterTitle: "Chapter 1: The Birth of Quantum Mechanics", pageRange: "Pages 1 - 32", subheadings: [{ subTitle: "1.1 Classical Physics Crisis", details: "Failures of Newtonian mechanics." }] }]
+            }
+        };
+
+        const categoriesList = [
+            "Computer Science", "Artificial Intelligence", "Constitutional Law", "World History", 
+            "Advanced Mathematics", "Organic Chemistry", "Economics & Finance", "Literature & Poetry", 
+            "Philosophy & Ethics", "Medical Sciences", "Software Engineering", "Cyber Security", 
+            "Data Structures & Algorithms", "Astrophysics", "Civil Engineering"
+        ];
+
+        const authorsList = [
+            "Dr. Zulkarnain Haider", "Prof. Margaret Hale", "Barrister Ali Raza", "Dr. Ahmad Raza", 
+            "Prof. Fatima Noor", "Dr. John Watson", "Prof. Alan Turing", "Dr. Richard Feynman", 
+            "Prof. Stephen Hawking", "Dr. Marie Curie", "Prof. Charles Babbage", "Dr. Ada Lovelace"
+        ];
+
+        const uniqueImagePool = [
+            "https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1495640388908-05fa85288e61?auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1550399105-c4db5fb85c18?auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1513001900722-370f803f498d?auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=500&q=80"
+        ];
+
+        const hiddenContainer = document.getElementById('hiddenBooksContainer');
+        
+        const bookPrefixes = [
+            "Advanced Principles of", "Modern Foundations in", "Comprehensive Guide to", "The Practitioner's Handbook of",
+            "Theoretical & Applied", "Essentials of", "Mastering", "The Future of", "Innovations in", "Global Perspectives on"
+        ];
+
+        for (let i = 3; i <= 107; i++) {
+            const cat = categoriesList[i % categoriesList.length];
+            const author = authorsList[i % authorsList.length];
+            const prefix = bookPrefixes[i % bookPrefixes.length];
+            const title = `${prefix} ${cat} (Vol. ${i - 2})`;
+            const imgUrl = uniqueImagePool[(i * 7) % uniqueImagePool.length];
+            
+            bookDatabase[i] = {
+                title: title,
+                author: author,
+                category: cat,
+                description: `Comprehensive academic text volume ${i - 2} exploring key principles, case studies, and advanced research methodologies in ${cat}.`,
+                chapters: [
+                    {
+                        chapterTitle: `Chapter 1: Introduction to ${cat}`,
+                        pageRange: "Pages 1 - 50",
+                        subheadings: [
+                            { subTitle: `1.1 Core Foundations of ${cat}`, details: `Detailed exploration of foundational theories, historical background, and key frameworks.` },
+                            { subTitle: `1.2 Practical Case Studies`, details: "Real-world implementations and critical analysis." }
+                        ]
+                    }
+                ]
+            };
+
+            const card = document.createElement('div');
+            card.className = 'bg-white rounded-2xl shadow-sm border border-amber-300/60 overflow-hidden hover:shadow-xl transition flex flex-col justify-between group';
+            card.innerHTML = `
+                <div>
+                    <div class="h-64 bg-indigo-100 overflow-hidden relative">
+                        <img src="${imgUrl}" alt="Book Cover" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 right-3 bg-amber-500 text-gray-950 text-[10px] px-2 py-1 rounded-md font-extrabold shadow">Archive #${i} • ${cat}</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-base text-indigo-950 mb-1 leading-snug">${title}</h3>
+                        <p class="text-xs text-indigo-600 font-semibold mb-2">By ${author}</p>
+                        <p class="text-xs text-gray-500 line-clamp-2 leading-relaxed">Extensive archival volume available for research and home borrowing at Zulqarnain Library Center.</p>
+                    </div>
+                </div>
+                <div class="p-5 pt-0 flex flex-col gap-2">
+                    <button onclick="openBookModal(${i})" class="w-full bg-indigo-600 text-white hover:bg-indigo-700 font-bold py-2.5 rounded-xl text-xs transition shadow-sm flex items-center justify-center gap-1.5 cursor-pointer">
+                        <i class="fa-solid fa-book-open"></i> Open Book & Details
+                    </button>
+                    <button onclick="alert('Book #${i} (${title}) successfully reserved!')" class="w-full bg-indigo-50 text-indigo-700 hover:bg-indigo-100 font-bold py-2 rounded-xl text-xs transition border border-indigo-200 cursor-pointer">
+                        Reserve Book
+                    </button>
+                </div>
+            `;
+            hiddenContainer.appendChild(card);
+        }
+
+        function toggleAllHiddenBooks() {
+            const hiddenBooksContainer = document.getElementById('hiddenBooksContainer');
+            const toggleBtnText = document.getElementById('toggleBtnText');
+            const toggleIcon = document.getElementById('toggleIcon');
+            
+            let isHidden = hiddenBooksContainer.classList.contains('hidden');
+
+            if (isHidden) {
+                hiddenBooksContainer.classList.remove('hidden');
+                toggleBtnText.innerText = 'Hide 100+ Books Archive';
+                toggleIcon.className = 'fa-solid fa-eye-slash';
+                document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
+            } else {
+                hiddenBooksContainer.classList.add('hidden');
+                toggleBtnText.innerText = 'Show All 100+ Books Not Visible on Home Page';
+                toggleIcon.className = 'fa-solid fa-eye';
+            }
+        }
+
+        function openBookModal(bookId) {
+            const book = bookDatabase[bookId] || bookDatabase[1];
+            document.getElementById('modalCategory').innerText = book.category;
+            document.getElementById('modalTitle').innerText = book.title;
+            document.getElementById('modalAuthor').innerText = "Author / Source: " + book.author;
+            document.getElementById('modalDescription').innerText = book.description;
+
+            const chaptersContainer = document.getElementById('modalChapters');
+            chaptersContainer.innerHTML = '';
+
+            book.chapters.forEach((ch, index) => {
+                let subheadingsHTML = '';
+                ch.subheadings.forEach(sub => {
+                    subheadingsHTML += `
+                        <div class="p-3 bg-white border border-gray-100 rounded-xl">
+                            <h6 class="font-bold text-xs text-indigo-900 mb-1"><i class="fa-solid fa-angles-right text-amber-500 mr-1.5 text-[10px]"></i> ${sub.subTitle}</h6>
+                            <p class="text-[11px] text-gray-600 leading-relaxed">${sub.details}</p>
+                        </div>
+                    `;
+                });
+
+                const chapterBox = document.createElement('div');
+                chapterBox.className = 'p-5 bg-gray-50 border border-gray-200 rounded-2xl space-y-3';
+                chapterBox.innerHTML = `
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-gray-200 pb-3 gap-2">
+                        <div>
+                            <h5 class="font-extrabold text-sm text-indigo-950">${ch.chapterTitle}</h5>
+                            <span class="text-xs text-gray-500 font-semibold">${ch.pageRange}</span>
+                        </div>
+                        <button onclick="toggleChapterContent('chapter-content-${bookId}-${index}', this)" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs px-4 py-2 rounded-xl transition shadow-sm flex items-center gap-1.5 cursor-pointer">
+                            <i class="fa-solid fa-book-open-reader"></i> <span class="btn-text">Open Chapter</span>
+                        </button>
+                    </div>
+                    <div id="chapter-content-${bookId}-${index}" class="space-y-2 mt-3 hidden pt-2 border-t border-dashed border-gray-200">
+                        <p class="text-xs font-bold uppercase text-indigo-600 tracking-wider mb-2">Chapter Subheadings & Complete Content:</p>
+                        ${subheadingsHTML}
+                    </div>
+                `;
+                chaptersContainer.appendChild(chapterBox);
+            });
+
+            document.getElementById('bookModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function toggleChapterContent(contentId, buttonElement) {
+            const contentDiv = document.getElementById(contentId);
+            const btnText = buttonElement.querySelector('.btn-text');
+            
+            if (contentDiv.classList.contains('hidden')) {
+                contentDiv.classList.remove('hidden');
+                btnText.innerText = 'Close Chapter';
+                buttonElement.classList.replace('bg-indigo-600', 'bg-amber-500');
+                buttonElement.classList.replace('text-white', 'text-gray-950');
+            } else {
+                contentDiv.classList.add('hidden');
+                btnText.innerText = 'Open Chapter';
+                buttonElement.classList.replace('bg-amber-500', 'bg-indigo-600');
+                buttonElement.classList.replace('text-gray-950', 'text-white');
+            }
+        }
+
+        function closeBookModal() {
+            document.getElementById('bookModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function handleUserRegistration(event) {
+            event.preventDefault();
+            const fullName = document.getElementById('regFullName').value;
+            document.getElementById('registrationForm').reset();
+            closeNewUsersModal();
+            alert(`Welcome ${fullName}! Your account has been successfully created.`);
+        }
+
+        function openNewUsersModal() {
+            document.getElementById('newUsersModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeNewUsersModal() {
+            document.getElementById('newUsersModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = function(event) {
+            const bookModal = document.getElementById('bookModal');
+            const newUsersModal = document.getElementById('newUsersModal');
+            if (event.target === bookModal) closeBookModal();
+            if (event.target === newUsersModal) closeNewUsersModal();
+        }
+    </script>
+</body>
+</html>
